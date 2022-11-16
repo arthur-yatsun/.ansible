@@ -1,0 +1,46 @@
+# -- Debian -- 
+- name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
+  become: true
+  apt:
+    name: ["build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev"]
+  tags:
+    - debian
+    - core
+
+- name: Install System Packages 2 (lua, unzip, libtool, libtool-bin, gettext)
+  become: true
+  apt:
+    name: [ "lua5.1", "unzip", "libtool", "libtool-bin", "gettext"]
+  tags:
+    - debian
+    - core
+
+- name: Install System Packages 3 (the rest)
+  become: true
+  apt:
+    name: ["curl", "htop", "golang", "lsof", "i3", "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd"]
+  tags:
+    - debian
+    - core
+
+- name: Install Clang
+  become: true
+  apt:
+    name: ["clang", "clang-11", "clang-12", "clangd", "clangd-10", "clangd-11", "clangd-12"]
+  tags:
+    - debian
+    - core
+
+
+# -- MacOS --
+- name: Install xcode command line tools
+  shell: xcode-select --install || true
+  tags:
+    - mac_os
+    - core
+
+- name: Install homebrew
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  tags:
+    - mac_os
+    - core
