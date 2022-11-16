@@ -1,5 +1,5 @@
 # -- Debian -- 
-- name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
+- name: Install System Packages 1
   become: true
   apt:
     name: ["build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev"]
@@ -7,10 +7,10 @@
     - debian
     - core
 
-- name: Install System Packages 2 (lua, unzip, libtool, libtool-bin, gettext)
+- name: Install System Packages 2 
   become: true
   apt:
-    name: [ "lua5.1", "unzip", "libtool", "libtool-bin", "gettext"]
+    name: ["lua5.1", "unzip", "libtool", "libtool-bin", "gettext", "jq", "stow"]
   tags:
     - debian
     - core
@@ -18,7 +18,7 @@
 - name: Install System Packages 3 (the rest)
   become: true
   apt:
-    name: ["curl", "htop", "golang", "lsof", "i3", "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd"]
+    name: ["curl", "wget", "htop", "golang", "lsof", "i3", "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd"]
   tags:
     - debian
     - core
@@ -33,14 +33,8 @@
 
 
 # -- MacOS --
-- name: Install xcode command line tools
-  shell: xcode-select --install || true
-  tags:
-    - mac_os
-    - core
-
-- name: Install homebrew
-  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+- name: Install System Packages
+  brew: ["curl", "wget", "htop", "go", "lua", "jq", "tree", "stow", "gettext"]
   tags:
     - mac_os
     - core
