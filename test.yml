@@ -1,5 +1,5 @@
 - hosts: localhost
+  become: true
   tasks:
   - name: echo
     shell: echo 1
-

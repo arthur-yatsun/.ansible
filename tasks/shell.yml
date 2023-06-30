@@ -1,0 +1,25 @@
+vars:
+
+- name: Install zsh
+  apt: name=zsh
+  tags:
+    - debian_linux
+
+- name: Change shell
+  shell: chsh -s `which zsh`
+  tags:
+    - debian_linux
+
+- name: Install ohmyzsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  tags:
+    - debian_linux
+#    - mac_os
+
+- name: Install zsh-autosuggestions
+  ansible.builtin.git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
+    dest: "{{ ohmyzsh_plugins_path }}/zsh-autosuggestions"
+    tags:
+      - debian_linux
+      - mac_os

@@ -1,31 +1,31 @@
-# .ansible
+## Ubuntu/Mint setup
 
-## Install MacOS environment
-
-Install xcode cli tools
+1. Install ansible
 ```bash
+TBA
+```
+
+2. Run ansible playbook
+```bash
+ansible-playbook install.yml --tags "debian" --ask-become-pass
+```
+
+## Mac OS setup
+1. Install brew and xcode cli tools 
+```bash
+# xcode
 xcode-select --install
-```
 
-Install homebrew
-```bash
+# brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-?? probably you will need to add homebrew directory to the $PATH
-echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
 ```
 
-Install ansible
+2. Install ansible
 ```bash
 brew install ansible
 ```
 
-Install environment
+3. Run ansible playbook
 ```bash
-ansible-playbook local.yml --tags "mac_os" --ask-become-pass
-```
-
-## Install Debian environment
-```bash
-ansible-playbook local.yml --tags "debian" --ask-become-pass
+ansible-playbook install.yml --tags "mac_os" --ask-become-pass
 ```
