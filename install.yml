@@ -10,4 +10,4 @@
     - include: tasks/tmux.yml
     - include: tasks/nvim.yml
     - include: tasks/python.yml
-
+    - include: tasks/cloud.yml
