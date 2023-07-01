@@ -3,22 +3,23 @@
     name: tmux
     state: present
   tags:
+    - mac_os_tmux
     - mac_os
-    - tmux
 
 - name: Install tmux
   apt:
     name: tmux
     state: present
   tags:
+    - debian_linux_tmux
     - debian_linux
-    - tmux
 
 - name: Install tpm
   ansible.builtin.git:
     repo: "https://github.com/tmux-plugins/tpm.git"
     dest: "~/.tmux/plugins/tpm"
   tags:
+    - mac_os_tmux
+    - debian_linux_tmux
     - mac_os
     - debian_linux
-    - tmux

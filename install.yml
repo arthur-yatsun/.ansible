@@ -5,5 +5,6 @@
     - include: tasks/shell.yml
     - include: tasks/filesystem.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/core.yml
     - include: tasks/tmux.yml
 

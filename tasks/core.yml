@@ -1,0 +1,49 @@
+## -- Debian --
+#- name: Install System Packages 1
+#  become: true
+#  apt:
+#    name: ["build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev"]
+#  tags:
+#    - debian
+#    - core
+#
+#- name: Install System Packages 2
+#  become: true
+#  apt:
+#    name: ["lua5.1", "unzip", "libtool", "libtool-bin", "gettext", "jq", "stow"]
+#  tags:
+#    - debian
+#    - core
+#
+#- name: Install System Packages 3 (the rest)
+#  become: true
+#  apt:
+#    name: ["curl", "wget", "htop", "golang", "lsof", "i3", "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd"]
+#  tags:
+#    - debian
+#    - core
+#
+#- name: Install Clang
+#  become: true
+#  apt:
+#    name: ["clang", "clang-11", "clang-12", "clangd", "clangd-10", "clangd-11", "clangd-12"]
+#  tags:
+#    - debian
+#    - core
+
+
+# -- MacOS --
+- name: Install System Packages
+  become: false
+  homebrew:
+    name:
+      - curl
+      - wget
+      - htop
+      - jq
+      - tree
+      - gettext
+      - ripgrep
+  tags:
+    - mac_os_core
+    - mac_os

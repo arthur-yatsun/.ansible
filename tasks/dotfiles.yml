@@ -3,16 +3,16 @@
     name: stow
     state: present
   tags:
+    - mac_os_dotfiles
     - mac_os
-    - dotfiles
 
 - name: Install stow
   apt:
     name: stow
     state: present
   tags:
+    - debian_linux_dotfiles
     - debian_linux
-    - dotfiles
 
 - name: Clone .dotfiles repo
   ansible.builtin.git:
@@ -22,13 +22,26 @@
     update: yes
     recursive: yes
   tags:
+    - mac_os_dotfiles
+    - debian_linux_dotfiles
     - mac_os
     - debian_linux
-    - dotfiles
 
 - name: Install .dotfiles
   shell: "cd ~/documents/repos/.dotfiles && ./install.sh"
   tags:
+    - mac_os_dotfiles
+    - debian_linux_dotfiles
     - mac_os
     - debian_linux
-    - dotfiles
+
+- name: Make .dotfiles/bin/.local/scripts executable
+  file:
+    path: "~/.dotfiles/bin/.local/scripts"
+    mode: 0755
+    recurse: yes
+  tags:
+    - mac_os_dotfiles
+    - debian_linux_dotfiles
+    - mac_os
+    - debian_linux
