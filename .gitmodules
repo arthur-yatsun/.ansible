@@ -1,3 +1,0 @@
-[submodule ".ansible-personal"]
-	path = .ansible-personal
-	url = git@github.com:arthur-yatsun/.ansible-personal.git
