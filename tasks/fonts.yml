@@ -1,0 +1,15 @@
+- name: Tap into Homebrew Cask Fonts
+  homebrew_tap:
+    name: homebrew/cask-fonts
+    state: present
+  tags:
+    - mac_os_fonts
+    - mac_os
+
+- name: Install Hack Nerd Font
+  homebrew_cask:
+    name: font-hack-nerd-font
+    state: present
+  tags:
+    - mac_os_fonts
+    - mac_os

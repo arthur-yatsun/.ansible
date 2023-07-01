@@ -1,0 +1,17 @@
+- name: Install nvim (sorry for brew)
+  homebrew:
+    name: neovim
+    state: present
+  tags:
+    - mac_os_nvim
+    - mac_os
+
+- name: Install packer.nvim
+  ansible.builtin.git:
+    repo: "https://github.com/wbthomason/packer.nvim"
+    dest: "~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  tags:
+    - mac_os_nvim
+    - debian_linux_nvim
+    - mac_os
+    - debian_linux

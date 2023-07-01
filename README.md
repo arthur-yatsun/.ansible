@@ -1,16 +1,17 @@
 
 ## Setup software and tools:
-| Name                   | ansible-playbook tag(s)                 | Tools                                                                                                 |
-|------------------------|-----------------------------------------|-------------------------------------------------------------------------------------------------------|
-| MacOS complete setup   | mac_os                                  | Complete MacOS setup                                                                                  |
+| Name                       | ansible-playbook tag(s)                 | Tools                                                                                                 |
+|----------------------------|-----------------------------------------|-------------------------------------------------------------------------------------------------------|
+| MacOS complete setup       | mac_os                                  | Complete MacOS setup                                                                                  |
 | Debian linux complete setup | debian_linux                            | Complete Debian (Ubuntu/Mint) setup                                                                   |
-| Shell                  | mac_os_shell, debian_linux_shell        | zsh, oh-my-zsh, zsh-autosuggestions, zsh-syntax-highlighting, zsh-autoswitch-virtualenv, powerlevel10k |
-| Dotfiles               | mac_os_dotfiles,  debian_linux_dotfiles | stow, https://github.com/arthur-yatsun/.dotfiles                                                      |
-| Tmux                   | mac_os_tmux, debian_linux_tmux          | tmux, tpm                                                                                             |
-| Core                   | mac_os_core, debian_linux_core          | curl wget htop jq ... (OS dependent)                                                                  |
-|                        | Programming languages                   | Python3.8 pip3 virtualenv NodeJS npm Java Maven Lua                                                   |
-| ---                    | Databases                               | MySQL PostgreSQL MongoDB                                                                              |
-| ---                    | Cloud SDKs                              | gcloud                                                                                                |
+| Shell                      | mac_os_shell, debian_linux_shell        | zsh, oh-my-zsh, zsh-autosuggestions, zsh-syntax-highlighting, zsh-autoswitch-virtualenv, powerlevel10k |
+| Dotfiles                   | mac_os_dotfiles,  debian_linux_dotfiles | stow, https://github.com/arthur-yatsun/.dotfiles                                                      |
+| Fonts                      | mac_os_fonts, ~~debian_linux_fonts~~    | Hack Nerd Font                                                                                        |
+| Tmux                       | mac_os_tmux, debian_linux_tmux          | tmux, tpm                                                                                             |
+| Core                       | mac_os_core, ~~debian_linux_core~~      | curl wget htop jq ... (OS dependent)                                                                  |
+|                            | Programming languages                   | Python3.8 pip3 virtualenv NodeJS npm Java Maven Lua                                                   |
+| ---                        | Databases                               | MySQL PostgreSQL MongoDB                                                                              |
+| ---                        | Cloud SDKs                              | gcloud                                                                                                |
 
 
  
