@@ -17,7 +17,7 @@
 - name: Clone .dotfiles repo
   ansible.builtin.git:
     repo: "https://github.com/arthur-yatsun/.dotfiles.git"
-    dest: "~/documents/repos/.dotfiles2"
+    dest: "~/documents/repos/.dotfiles"
     clone: yes
     update: yes
     recursive: yes
@@ -27,7 +27,7 @@
     - dotfiles
 
 - name: Install .dotfiles
-  shell: "cd ~/documents/repos/.dotfiles2 && ./install.sh"
+  shell: "cd ~/documents/repos/.dotfiles && ./install.sh"
   tags:
     - mac_os
     - debian_linux

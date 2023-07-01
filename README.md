@@ -1,16 +1,18 @@
 
 ## Setup software and tools:
-| Category             | Tools                                                                                                                              |
+| Tag                  | Tools                                                                                                                              |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| Shell                | zsh, oh-my-zsh, zsh-autosuggestions, zsh-syntax-highlighting, zsh-autoswitch-virtualenv, powerlevel10k                             |
-| Dotfiles             | stow, https://github.com/arthur-yatsun/.dotfiles                                                                                   |
-| Tmux                 | tmux, tpm                                                                                                                          |
+| shell                | zsh, oh-my-zsh, zsh-autosuggestions, zsh-syntax-highlighting, zsh-autoswitch-virtualenv, powerlevel10k                             |
+| dotfiles             | stow, https://github.com/arthur-yatsun/.dotfiles                                                                                   |
+| tmux                 | tmux, tpm                                                                                                                          |
 | Core                 | curl vim wget git xclip htop zsh software-properties-common stow libreadline-dev ripgrep build-essential neovim + Packer tmux + tpm |
 | Programming languages | Python3.8 pip3 virtualenv NodeJS npm Java Maven Lua                                                                                |
 | Databases            | MySQL PostgreSQL MongoDB                                                                                                           |
 | Cloud SDKs           | gcloud                                                                                                                             |
 
+
 Configure base filesystem structure:
+tag - `filesystem`
 ```bash
 - ~/ 
   --- ~/documents/repos

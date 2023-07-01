@@ -1,0 +1,24 @@
+- name: Install tmux
+  homebrew:
+    name: tmux
+    state: present
+  tags:
+    - mac_os
+    - tmux
+
+- name: Install tmux
+  apt:
+    name: tmux
+    state: present
+  tags:
+    - debian_linux
+    - tmux
+
+- name: Install tpm
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm.git"
+    dest: "~/.tmux/plugins/tpm"
+  tags:
+    - mac_os
+    - debian_linux
+    - tmux
