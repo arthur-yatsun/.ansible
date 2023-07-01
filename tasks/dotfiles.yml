@@ -1,0 +1,34 @@
+- name: Install stow
+  homebrew:
+    name: stow
+    state: present
+  tags:
+    - mac_os
+    - dotfiles
+
+- name: Install stow
+  apt:
+    name: stow
+    state: present
+  tags:
+    - debian_linux
+    - dotfiles
+
+- name: Clone .dotfiles repo
+  ansible.builtin.git:
+    repo: "https://github.com/arthur-yatsun/.dotfiles.git"
+    dest: "~/documents/repos/.dotfiles2"
+    clone: yes
+    update: yes
+    recursive: yes
+  tags:
+    - mac_os
+    - debian_linux
+    - dotfiles
+
+- name: Install .dotfiles
+  shell: "cd ~/documents/repos/.dotfiles2 && ./install.sh"
+  tags:
+    - mac_os
+    - debian_linux
+    - dotfiles
