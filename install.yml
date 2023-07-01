@@ -1,5 +1,4 @@
 - hosts: localhost
-  vars_files:
-    - "variables.yml"
   tasks:
-    - include_tasks: tasks/shell.yml
+    - include: tasks/shell.yml
+    - include: tasks/filesystem.yml

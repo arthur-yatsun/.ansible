@@ -14,9 +14,7 @@ Configure base filesystem structure:
 - ~/ 
   --- ~/documents/repos
   --- ~/documents/stuff
-  --- ~/documents/docs
-  --- ~/documents/data
-  --- ~/<work>
+  --- ...
 ```
 
 ## Ubuntu/Mint setup
