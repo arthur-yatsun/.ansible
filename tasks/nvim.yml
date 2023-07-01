@@ -1,4 +1,5 @@
 - name: Install nvim (sorry for brew)
+  become: false
   homebrew:
     name: neovim
     state: present

@@ -1,0 +1,35 @@
+- name: Install MySQL
+  become: false
+  homebrew:
+    name: mysql
+    state: present
+  tags:
+    - mac_os_databases
+    - mac_os
+
+- name: Install PostgresSQL
+  become: false
+  homebrew:
+    name: postgresql
+    state: present
+  tags:
+    - mac_os_databases
+    - mac_os
+
+- name: Install MongoDB
+  become: false
+  homebrew:
+    name: mongodb-community@4.4
+    state: present
+  tags:
+    - mac_os_databases
+    - mac_os
+
+- name: Install Redis
+  become: false
+  homebrew:
+    name: redis
+    state: present
+  tags:
+    - mac_os_databases
+    - mac_os

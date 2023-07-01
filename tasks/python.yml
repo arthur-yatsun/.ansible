@@ -1,0 +1,99 @@
+- name: Check if pip3 is installed
+  shell: command -v pip3
+  register: pip3_installed
+  failed_when: pip3_installed.rc != 0
+  tags:
+    - mac_os_python
+    - mac_os
+
+- name: Ensure pip3 is installed
+  pip:
+    name: pip
+    executable: pip3
+  when: pip3_installed.rc != 0
+  tags:
+    - mac_os_python
+    - mac_os
+
+- name: Install virtualenv using pip
+  pip:
+    name: virtualenv
+    executable: pip3
+  tags:
+    - mac_os_python
+    - mac_os
+
+- name: Install ipython and ipdb
+  pip:
+    name:
+      - ipython
+      - ipdb
+    executable: pip3
+  tags:
+    - mac_os_python
+    - mac_os
+
+- name: Install dependencies for pyenv using Homebrew
+  become: false
+  homebrew:
+    name:
+      - readline
+      - zlib
+      - openssl
+      - bzip2
+    state: present
+  tags:
+      - mac_os_python
+      - mac_os
+
+- name: Clone pyenv repository to ~/.pyenv
+  git:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: ~/.pyenv
+    clone: yes
+    update: yes
+  tags:
+    - mac_os_python
+    - mac_os
+
+- name: Install Python 3.7
+  shell: |
+    pyenv install -v $(pyenv install --list | grep "^  3.7.\d*$" | tail -n 1)
+  tags:
+    - mac_os_python
+    - mac_os
+
+- name: Install Python 3.8
+  shell: | 
+    pyenv install -v $(pyenv install --list | grep "^  3.8.\d*$" | tail -n 1)
+  tags:
+    - mac_os_python
+    - mac_os
+
+#- name: Install Python 3.9
+#  shell: |
+#    pyenv install -v $(pyenv install --list | grep "^  3.9.\d*$" | tail -n 1)
+#  tags:
+#    - mac_os_python
+#    - mac_os
+#
+#- name: Install Python 3.10
+#  shell: |
+#    pyenv install -v $(pyenv install --list | grep "^  3.10.\d*$" | tail -n 1)
+#  tags:
+#  - mac_os_python
+#  - mac_os
+#
+#- name: Install Python 3.11
+#  shell: |
+#    pyenv install -v $(pyenv install --list | grep "^  3.11.\d*$" | tail -n 1)
+#  tags:
+#    - mac_os_python
+#    - mac_os
+#
+#- name: Install Python 2.7
+#  shell: |
+#    pyenv install -v $(pyenv install --list | grep "^  2.7.\d*$" | tail -n 1)
+#  tags:
+#    - mac_os_python
+#    - mac_os

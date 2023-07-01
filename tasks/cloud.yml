@@ -1,0 +1,32 @@
+- name: Check if gcloud is installed
+  shell: command -v gcloud
+  register: gcloud_installed
+  ignore_errors: yes
+
+- name: Download and install gcloud SDK
+  shell: curl https://sdk.cloud.google.com | bash
+  args:
+    executable: /bin/bash
+  when: gcloud_installed.rc != 0
+
+- name: Check if AWS CLI is installed
+  command: command -v aws
+  register: aws_installed
+  ignore_errors: yes
+
+- name: Download AWS CLI
+  get_url:
+    url: https://awscli.amazonaws.com/AWSCLIV2.pkg
+    dest: /tmp/AWSCLIV2.pkg
+  when: aws_installed.rc != 0
+
+- name: Install AWS CLI
+  command: installer -pkg /tmp/AWSCLIV2.pkg -target /
+  become: yes
+  when: aws_installed.rc != 0
+
+- name: Install kubectl
+  become: false
+  homebrew:
+    name: kubectl
+    state: latest
