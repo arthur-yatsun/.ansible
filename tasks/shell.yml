@@ -14,12 +14,37 @@ vars:
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:
     - debian_linux
-#    - mac_os
+    - mac_os
 
 - name: Install zsh-autosuggestions
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions"
-    dest: "{{ ohmyzsh_plugins_path }}/zsh-autosuggestions"
-    tags:
-      - debian_linux
-      - mac_os
+    dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
+  tags:
+    - debian_linux
+    - mac_os
+
+- name: Install zsh-syntax-highlighting
+  ansible.builtin.git:
+    repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    dest: "~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+  tags:
+    - debian_linux
+    - mac_os
+
+- name: Install zsh-autoswitch-virtualenv
+  ansible.builtin.git:
+    repo: "https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git"
+    dest: "~/.oh-my-zsh/plugins/autoswitch_virtualenv"
+  tags:
+    - debian_linux
+    - mac_os
+
+- name: Install powerlevel10k theme
+  ansible.builtin.git:
+    repo: "https://github.com/romkatv/powerlevel10k.git"
+    dest: "~/.oh-my-zsh/themes/powerlevel10k"
+    depth: 1
+  tags:
+    - debian_linux
+    - mac_os
