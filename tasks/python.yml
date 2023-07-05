@@ -32,6 +32,7 @@
   tags:
     - mac_os_python
     - mac_os
+    - ipython
 
 - name: Install dependencies for pyenv using Homebrew
   become: false
@@ -58,42 +59,48 @@
 
 - name: Install Python 3.7
   shell: |
-    pyenv install -v $(pyenv install --list | grep "^  3.7.\d*$" | tail -n 1)
+    pyenv install -v 3.7.17
   tags:
     - mac_os_python
     - mac_os
+    - python3.7
 
 - name: Install Python 3.8
   shell: | 
-    pyenv install -v $(pyenv install --list | grep "^  3.8.\d*$" | tail -n 1)
+    pyenv install -v 3.8.17
   tags:
     - mac_os_python
     - mac_os
+    - python3.8
 
-#- name: Install Python 3.9
-#  shell: |
-#    pyenv install -v $(pyenv install --list | grep "^  3.9.\d*$" | tail -n 1)
-#  tags:
-#    - mac_os_python
-#    - mac_os
-#
-#- name: Install Python 3.10
-#  shell: |
-#    pyenv install -v $(pyenv install --list | grep "^  3.10.\d*$" | tail -n 1)
-#  tags:
-#  - mac_os_python
-#  - mac_os
-#
-#- name: Install Python 3.11
-#  shell: |
-#    pyenv install -v $(pyenv install --list | grep "^  3.11.\d*$" | tail -n 1)
-#  tags:
-#    - mac_os_python
-#    - mac_os
-#
-#- name: Install Python 2.7
-#  shell: |
-#    pyenv install -v $(pyenv install --list | grep "^  2.7.\d*$" | tail -n 1)
-#  tags:
-#    - mac_os_python
-#    - mac_os
+- name: Install Python 3.9
+  shell: |
+    pyenv install -v 3.9.17
+  tags:
+    - mac_os_python
+    - mac_os
+    - python3.9
+
+- name: Install Python 3.10
+  shell: |
+    pyenv install -v 3.10.12
+  tags:
+  - mac_os_python
+  - mac_os
+  - python3.10
+
+- name: Install Python 3.11
+  shell: |
+    pyenv install -v 3.11.4
+  tags:
+    - mac_os_python
+    - mac_os
+    - python3.11
+
+- name: Install Python 2.7
+  shell: |
+    pyenv install -v 2.7.18
+  tags:
+    - mac_os_python
+    - mac_os
+    - python2.7

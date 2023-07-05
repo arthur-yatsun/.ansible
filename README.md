@@ -1,18 +1,18 @@
 
 ## Setup software and tools:
-| Name                       | ansible-playbook tag(s)                | Tools                                                                                                 |
-|----------------------------|----------------------------------------|-------------------------------------------------------------------------------------------------------|
-| MacOS complete setup       | mac_os                                 | Complete MacOS setup                                                                                  |
-| Debian linux complete setup | debian_linux                           | Complete Debian (Ubuntu/Mint) setup                                                                   |
-| Shell                      | mac_os_shell, debian_linux_shell       | zsh, oh-my-zsh, zsh-autosuggestions, zsh-syntax-highlighting, zsh-autoswitch-virtualenv, powerlevel10k |
-| Dotfiles                   | mac_os_dotfiles,  debian_linux_dotfiles | stow, https://github.com/arthur-yatsun/.dotfiles                                                      |
-| Fonts                      | mac_os_fonts, ~~debian_linux_fonts~~   | Hack Nerd Font                                                                                        |
-| Tmux                       | mac_os_tmux, debian_linux_tmux         | tmux, tpm                                                                                             |
-| Core                       | mac_os_core, ~~debian_linux_core~~     | curl wget htop jq ... (OS dependent)                                                                  |
-| Nvim                       | mac_os_nvim, ~~debian_linux_nvim~~     | nvim, packer                                                                                          |
-| Python                     | mac_os_python                          | virtualenv, pyenv, ipython, ipdb, 3.7, 3.8, 3.9, 3.10, 3.11, 2.7                                      |
-| Databases                  | mac_os_databases                       | MySQL, PostgresSQL, Redis, MongoDB                                                                    |
-| Cloud SDKs                 | mac_os_cloud                           | gcloud, aws cli, kubectl                                                                              |
+| Name                       | ansible-playbook tag(s)                                                                    | Tools                                                                                                 |
+|----------------------------|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| MacOS complete setup       | mac_os                                                                                     | Complete MacOS setup                                                                                  |
+| Debian linux complete setup | debian_linux                                                                               | Complete Debian (Ubuntu/Mint) setup                                                                   |
+| Shell                      | mac_os_shell, debian_linux_shell                                                           | zsh, oh-my-zsh, zsh-autosuggestions, zsh-syntax-highlighting, zsh-autoswitch-virtualenv, powerlevel10k |
+| Dotfiles                   | mac_os_dotfiles,  debian_linux_dotfiles                                                    | stow, https://github.com/arthur-yatsun/.dotfiles                                                      |
+| Fonts                      | mac_os_fonts, ~~debian_linux_fonts~~                                                       | Hack Nerd Font                                                                                        |
+| Tmux                       | mac_os_tmux, debian_linux_tmux                                                             | tmux, tpm                                                                                             |
+| Core                       | mac_os_core, ~~debian_linux_core~~                                                         | curl wget htop jq ... (OS dependent)                                                                  |
+| Nvim                       | mac_os_nvim, ~~debian_linux_nvim~~                                                         | nvim, packer                                                                                          |
+| Python                     | mac_os_python, ipython, python3.7, python3.8, python3.9, python3.10, python3.11, python2.7 | virtualenv, pyenv, ipython, ipdb, 3.7, 3.8, 3.9, 3.10, 3.11, 2.7                                      |
+| Databases                  | mac_os_databases                                                                           | MySQL, PostgresSQL, Redis, MongoDB                                                                    |
+| Cloud SDKs                 | mac_os_cloud                                                                               | gcloud, aws cli, kubectl                                                                              |
 
 
 Configure base filesystem structure:
